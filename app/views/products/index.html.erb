@@ -1,0 +1,19 @@
+<table class="productList">
+	
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th></th>
+	</tr>
+
+	<% @items.each do |i| %>
+
+		<tr>
+			<td><%= link_to i.name, product_path(i) %></td>
+			<td><%= i.price %></td>
+			<td><%= i.count %></td>
+		</tr>
+
+	<% end %>
+</table>

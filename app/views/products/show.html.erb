@@ -1,0 +1,11 @@
+<h2><%= @item.name %></h2>
+
+<ul>
+	<li>$<%= @item.price %></li>
+	<li><%= @item.count %> pcs.</li>
+</ul>
+
+<div class='productEditDeleteLinks'>
+	<%= link_to "Edit", product_path(@item)+'/edit' %>
+	<%= link_to "Delete", product_path(@item), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+</div>
