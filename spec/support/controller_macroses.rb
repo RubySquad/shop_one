@@ -15,7 +15,7 @@ module ControllerMacros
           else "GET"
           end
           process a, verb, {id: 0}
-          response.status.should == 404
+          expect(response.status).to equal(404)
       end
     end
    end
