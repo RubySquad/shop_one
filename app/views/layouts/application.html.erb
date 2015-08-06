@@ -19,8 +19,13 @@
         <li><%= link_to "New item", '/products/new' %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <li><%= link_to "Sign in", '/users/login' %></li>
-        <li><%= link_to "Register", '#' %></li>
+        <% if current_user %>
+          <li><%= current_user.email %></li>
+          <li><%= link_to "Sign out", logout_path %></li>
+        <% else %>
+          <li><%= link_to "Sign in", login_path %></li>
+          <li><%= link_to "Register", register_path %></li>
+        <% end %>
         <li><%= link_to "Cart", '#' %></li>
       </ul>
     </nav>

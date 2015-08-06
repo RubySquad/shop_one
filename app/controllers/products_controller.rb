@@ -1,5 +1,6 @@
 # Product RESTfull controller
 class ProductsController < ApplicationController
+	before_filter :authorize, only: [:edit, :update, :destroy]
 
 	# output list of Products
 	def index
