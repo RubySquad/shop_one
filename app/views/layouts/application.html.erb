@@ -7,9 +7,42 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
+
 <body>
 
-<%= yield %>
+<header class="navbar">
+  <div class="navbar-inner">
+    <nav>
+      <ul class="nav navbar-nav pull-left">
+        <li><%= link_to "About", '/main/index' %></li>
+        <li><%= link_to "Store", '/products' %></li>
+        <li><%= link_to "New item", '/products/new' %></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "Sign in", '#' %></li>
+        <li><%= link_to "Register", '#' %></li>
+        <li><%= link_to "Cart", '#' %></li>
+      </ul>
+    </nav>
+    <div class="center">
+      <h1><b>SHOP ONE</b></h1>
+      <h2>You can find here all what you want</h2>
+    </div>
+  </div>
+</header>
+
+<div class="center">
+  <div class="main_field">
+
+  <%= yield %>
+
+  </div>
+
+</div>
+
+<footer class="ftr">
+  <p>Designed by RubySquad</p>
+</footer>
 
 </body>
 </html>

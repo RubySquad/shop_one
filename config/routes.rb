@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  #get 'main/index'
-  root 'main#index'
-  get 'users/login'
+  get 'main/index'
+  root 'products#index'
 
+  resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
