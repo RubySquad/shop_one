@@ -1,6 +1,6 @@
 <h2>Sign Up</h2>
 
-<%= form_for @model do |f| %>
+<%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
 		<div class="error_messages">
 			<h2>Form is invalid</h2>
@@ -13,20 +13,30 @@
 	<% end %>
 
 	<div class="field">
-		<%= f.label :email %>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :surname %><br/>
+		<%= f.text_field :surname %>
+	</div>
+
+	<div class="field">
+		<%= f.label :email %><br/>
 		<%= f.text_field :email %>
 	</div>
 
 	<div class="field">
-		<%= f.label :password %>
+		<%= f.label :password %><br/>
 		<%= f.password_field :password %>
 	</div>
 
 	<div class="field">
-		<%= f.label :password_confirmation, "Password _Confirmation" %>
+		<%= f.label :password_confirmation %><br/>
 		<%= f.password_field :password_confirmation %>
 	</div>
 
-	<div class="actions"><%= f.submit "Submit" %></div>
+	<div class="actions"><%= f.submit %></div>
   
 <% end %>
