@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
 
 	def login
+		puts 'Showing LogIn form'
+		render "authorization"
+	end
+
+	def authorize
 
 		user = find_user_by_login(params[:email])
-		unless user.nil?
-			acces_granted = check_user_password(user, params[:password])
-			render text: "#{acces_granted} - #{user[:name]} #{user[:surname]}"
+		if !user.nil? && check_user_password(user, params[:password])
+			grant_access(user)
 		else
-			render text: "No such user"
+			deny_access
 		end
 
 	end
@@ -20,5 +24,13 @@ private
 
 	def check_user_password(user, password)
 		password === user[:password]
+	end
+
+	def grant_access(user)
+		render text: "Acces granted - #{user[:name]} #{user[:surname]}"
+	end
+
+	def deny_access
+		render text: "No such user or wrong password"
 	end
 end
