@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
-          <li><%= current_user.email %></li>
+          <li><%= current_user.to_s %></li>
           <li><%= link_to "Sign out", logout_path %></li>
         <% else %>
           <li><%= link_to "Sign in", login_path %></li>
