@@ -80,15 +80,15 @@ ActiveRecord::Schema.define(version: 20150818180124) do
     t.string   "name"
     t.float    "price"
     t.integer  "count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "category_id"
-    t.integer  "producer_id"
-    t.integer  "retailer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "category_id"
+    t.integer  "producer_id"
+    t.integer  "retailer_id"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
