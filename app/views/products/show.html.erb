@@ -1,6 +1,6 @@
 <h2><%= @item.name %></h2>
 
-<%= image_tag(@item.image.url(:small))%>
+<%= image_tag(@item.image.exists?(:small) ? @item.image.url(:small) : 'Image_missing_small.jpg') %>
 
 <table class="productList">
   

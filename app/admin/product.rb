@@ -2,7 +2,7 @@ ActiveAdmin.register Product do
 
   menu label: "Товары", priority: 2
 
-  permit_params :name, :price, :count, :category_id, :producer_id, :retailer_id
+  permit_params :name, :price, :count, :image, :category_id, :producer_id, :retailer_id
 
   index :title => 'Товары' do
     selectable_column
@@ -11,10 +11,12 @@ ActiveAdmin.register Product do
     column "Производитель",       :producer
     column "Магазин",             :retailer
     column "Цена",                :price
+    column "Изображение",         :image_file_name
     column "Кол-во в наличии",    :count
     column "Последнее изменение", :updated_at
     actions
   end
+
 
 
   form do |f|
@@ -25,6 +27,7 @@ ActiveAdmin.register Product do
       f.input :retailer,  label: "Магазин"
       f.input :price, label: "Цена"
       f.input :count, label: "Кол-во в наличии"
+      f.file_field :image
     end
     actions
   end

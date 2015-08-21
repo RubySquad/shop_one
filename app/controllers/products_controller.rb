@@ -31,6 +31,14 @@ class ProductsController < ApplicationController
     subcategories.each do |c|
       c.products.each { |p| @items.push p }
     end
+
+    @items = Kaminari.paginate_array(@items).page(params[:page]).per(7)
+
+    respond_to do |format|
+      format.html
+      format.js {}
+    end
+
 	end
 
 	# output single Product by ID

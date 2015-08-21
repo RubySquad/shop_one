@@ -11,16 +11,9 @@
 <!--  Just a wireframe -->
 	<h3>Категория</h3>
 	<ul>
-
-	<% @categories.each do |c| %>
-		<li> <%=  link_to "#{c.name}", products_path(category: c.id) %> </li>
-	<% end %>
-
-<!--	
-		<li> <%=  link_to "Категория 1" %> </li>
-		<li> <%=  link_to "Категория 2" %> </li>
-		<li> <%=  link_to "Категория 3" %> </li>
--->
+		<% @categories.each do |c| %>
+			<li> <%=  link_to "#{c.name}", products_path(category: c.id) %> </li>
+		<% end %>
 	</ul>
 
 	<h3>Фильтры</h3>
@@ -54,30 +47,14 @@
 	<%= label_tag(:store3, "Магазин 3") %>
 
 </aside>
+<h2> Товары </h2>
 
-<div class="items">
-<!-- Тут какие-то непонятки. Если нет текста перед таблицей, 
-то она не отображается-->
-<h1>Товары</h1>
-
-	<table class="productList">
-		<tr >
-			<th>Картинка</th>
-			<th>Наименование</th>
-			<th>Цена</th>
-			<th>Количество</th>
-		</tr>
-
-		<% @items.each do |i| %>
-
-			<tr>
-				<td><%= link_to image_tag(i.image.url(:thumb)), product_path(i) %></td>
-				<td><%= link_to i.name, product_path(i) %></td>
-				<td><%= link_to i.price, product_path(i) %></td>
-				<td><%= link_to i.count, product_path(i) %></td>
-			</tr>
-
-		<% end %>
-	</table>
-
+<div id="product_list">
+	<%= render "product" %>
 </div>
+
+<div id="paginator">
+	<%= paginate @items, remote: true %>
+</div>
+
+

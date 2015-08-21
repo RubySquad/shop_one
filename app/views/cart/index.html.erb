@@ -20,7 +20,7 @@
   <% product = Product.find_by_id(id)%>
   <% unless  product.nil? %>
   <tr>
-    <td><%= image_tag(product.image.url(:thumb))%></td>
+    <td><%= image_tag(product.image.url(:thumb)) if product.image.exists?(:thumb) %></td>
     <td><%= link_to product.name, product%></td>
     <td><%= number_to_currency(product.price, unit: 'грн.', format: '%n %u') %></td>
     <td><%= quantity%></td>

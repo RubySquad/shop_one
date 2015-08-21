@@ -14,15 +14,21 @@
   <div class="navbar-inner">
   
       <ul class="nav navbar-nav pull-left">
-<!--        <li><%= link_to "О нас", '/main/index' %></li>    -->
+<!--        <li><-#%= link_to "О нас", '/main/index' %-></li>    -->
         <li><%= link_to "Склад", '/products' %></li>
         <% if can? :create, @product %>
-          <li><%= link_to "Новый продукт", '/products/new' %></li>
+          <li><%= link_to "Новый продукт", new_product_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
+
+        <% if current_user && current_user.admin? %>
+          <li><%= link_to "Панель администратора", admin_users_path %></li>
+        <%else%>
           <li><%= link_to "Личный кабинет", edit_user_registration_path %></li>
+        <% end %>
+
           <li><%= link_to "Выйти", destroy_user_session_path %></li>
         <% else %>
           <li><%= link_to "Зарегистрироваться", new_user_registration_path %></li>          
