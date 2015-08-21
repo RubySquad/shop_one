@@ -33,6 +33,8 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 
 gem 'paperclip'
 
+gem 'paperclip-dropbox'
+
 # gem 'mailcatcher'
 
 # Use ActiveModel has_secure_password
