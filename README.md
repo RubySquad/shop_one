@@ -21,3 +21,5 @@ The aim of this project is creating an on-line store this smart modern design. *
   - [x] Deploy on [Heroku](https://www.heroku.com/)
   - [x] Integrate project to [Travis CI](https://travis-ci.com/)
 
+4. Task 4 (HW9)
+  - [x] Mailer added
