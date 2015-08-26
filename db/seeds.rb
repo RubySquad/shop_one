@@ -41,13 +41,15 @@ Product.create!([
   {name: "Гречка",        price: 11.45, count: 15, category_id: 18, producer_id: 1, retailer_id: 1},
   {name: "Пшено",         price: 12.5, count: 15, category_id: 18, producer_id: 1, retailer_id: 1},
   {name: "Рис",           price: 10.5, count: 15, category_id: 18, producer_id: 2, retailer_id: 3},
-  {name: "Прловка 1кг",   price: 10.4, count: 15, category_id: 18, producer_id: 1, retailer_id: 1},
+  {name: "Перловка 1кг",   price: 10.4, count: 15, category_id: 18, producer_id: 1, retailer_id: 1},
   {name: "Каша Овсяная",  price: 10.3, count: 15, category_id: 18, producer_id: 3, retailer_id: 2},
   {name: "Каша Артек",    price: 15.2, count: 15, category_id: 18, producer_id: 3, retailer_id: 2},
   {name: "Геркулес",      price: 10.1, count: 15, category_id: 18, producer_id: 2, retailer_id: 1}
 ])
 
 user = User.new
+user.name = 'Jack'
+user.surname = 'Sparrow'
 user.email = 'admin@shop.rubysquad.pp.ua'
 user.role = 'admin'
 user.password = 'password'
