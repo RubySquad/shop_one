@@ -23,3 +23,4 @@ The aim of this project is creating an on-line store this smart modern design. *
 
 4. Task 4 (HW9)
   - [x] Mailer added
+  - [x] Auto heroku upload
