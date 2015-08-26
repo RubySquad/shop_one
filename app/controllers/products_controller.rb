@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   authorize_resource
 
 	before_filter :find_product, only: [:show, :edit, :update, :destroy]
+  before_filter :fill_filters_array, only: [:new, :edit]
 
 	# output list of Products
 	def index
@@ -92,6 +93,12 @@ class ProductsController < ApplicationController
     def find_product
     	@item = Product.where(id: params[:id]).first
     	render_404 unless @item
+    end
+
+    def fill_filters_array
+      @category_array = Category.all.map {|el| [el.name, el.id]} 
+      @producer_array = Producer.all.map {|el| [el.name, el.id]} 
+      @retailer_array = Retailer.all.map {|el| [el.name, el.id]} 
     end
 
     # Selects all subcategories which are childs of category parametr
