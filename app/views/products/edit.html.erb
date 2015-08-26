@@ -5,6 +5,9 @@
 	<p>Product name:<br/><%= f.text_field :name %></p>
 	<p>Product price:<br/><%= f.text_field :price %></p>
 	<p>Quantity:<br/><%= f.text_field :count %></p>
+  <p>Product category:<br/><%= f.select(:category_id, @category_array) %></p>
+  <p>Product producer:<br/><%= f.select(:producer_id, @producer_array) %></p>
+  <p>Product retailer:<br/><%= f.select(:retailer_id, @retailer_array) %></p>
 
   <p><%= f.file_field :image %></p>
 
