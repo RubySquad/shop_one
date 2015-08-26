@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  validates_presence_of :name, :surname
   after_find :after_find_action
   after_update  :after_save_action
 
@@ -16,6 +17,7 @@ class User < ActiveRecord::Base
       UserMailer.welcome_letter(email, name, surname).deliver_now
     end
   end
+
 
   def role?(r)
     role.include? r.to_s
