@@ -5,19 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates_presence_of :name, :surname
-  after_find :after_find_action
-  after_update  :after_save_action
 
-  def after_find_action
-    @confirmed = confirmed_at
+  after_save :send_welcome_email, 
+    if: Proc.new { |u| u.confirmed_at_changed? && u.confirmed_at_was.nil? }
+
+  def send_welcome_email
+    UserMailer.welcome_letter(email, name, surname).deliver_now
   end
-
-  def after_save_action
-    if @confirmed == nil && confirmed_at != nil
-      UserMailer.welcome_letter(email, name, surname).deliver_now
-    end
-  end
-
 
   def role?(r)
     role.include? r.to_s
