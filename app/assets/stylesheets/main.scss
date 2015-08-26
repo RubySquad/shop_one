@@ -5,6 +5,11 @@
 
 body {
   background: #eef;
+  // background-image: url("backgrounds/background1.jpg"); 
+  // background-attachment: fixed; 
+  // background-repeat: no-repeat; 
+  // background-position: center center;
+  // background-size: 100%; 
 }
 
 .nav {
@@ -37,6 +42,39 @@ body {
 .main_field {
   margin-left: auto;
   margin-right: auto;
+}
+
+.img{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.img-left{
+  float: left;
+}
+.img-right{
+  float: right;
+}
+.plaintext{
+  font-size:18px;
+  text-align: justify;
+}
+
+.percent{
+  float: left;
+  font-size: 4em;
+  margin-top: 0;
+  margin-right: 10px;
+  color: #f00;
+}
+
+.header{
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: left;
+}
+
+.myheader{
+  text-align: center; 
 }
 
 .article{
