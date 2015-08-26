@@ -110,6 +110,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dropbox-sdk (1.6.5)
+      json
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -166,6 +168,9 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    paperclip-dropbox (1.3.2)
+      dropbox-sdk (~> 1.3)
+      paperclip (>= 3.1, < 5)
     parser (2.2.2.6)
       ast (>= 1.1, < 3.0)
     pg (0.18.2)
@@ -212,7 +217,7 @@ GEM
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.3)
+    rails_stdout_logging (0.0.4)
     railties (4.2.3)
       actionpack (= 4.2.3)
       activesupport (= 4.2.3)
@@ -220,7 +225,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.4.2)
-    ransack (1.6.6)
+    ransack (1.7.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -322,7 +327,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari (= 0.16.3)
-  paperclip
+  paperclip-dropbox
   pg
   poltergeist
   pry

@@ -31,7 +31,7 @@ gem 'cancancan', '~> 1.12.0'
 # It's not release version which supports Rails 4
 gem 'activeadmin', '~> 1.0.0.pre1'
 
-gem 'paperclip'
+gem 'paperclip-dropbox'
 
 gem 'kaminari', '= 0.16.3'
 
