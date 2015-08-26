@@ -315,7 +315,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   better_errors
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.5.1)
   byebug (= 6.0.0)
   cancancan (~> 1.12.0)
   capybara
