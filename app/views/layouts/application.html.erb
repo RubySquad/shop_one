@@ -35,7 +35,7 @@
           <li><%= link_to "Войти", new_user_session_path %></li>
         <% end %>
         <% if current_user && current_user.user? %>
-          <li><%= link_to "Корзина", cart_path %></li>
+          <li><%= link_to raw("Корзина <span class='badge'>" + CartController.get_products_count(session).to_s + "</span>"), cart_path %></li>
         <% end %>
       </ul>
 

@@ -1,19 +1,19 @@
-<h1>Your Cart</h1>
+<h1>Ваша корзина</h1>
 <% if @cart.empty? %>
-  <p>Your cart is currently empty</p>
+  <p>Ваша корзина пуста</p>
 <% else %>
-  <%= link_to 'Empty Your Cart', cart_clear_path %>
+  <%= link_to 'Очистить корзину', cart_clear_path %>
 <% end %>
 
 <% total = 0 %>
 
 <table class="Cart">
 <tr>
-  <th>Image</th>
-  <th id="cart_name">Name</th>
-  <th>Price</th>
-  <th>Quantity</th>
-  <th>Sum</th>
+  <th></th>
+  <th id="cart_name">Наименование</th>
+  <th>Цена</th>
+  <th>Количество</th>
+  <th>Сумма</th>
 </tr>
 
 <% @cart.each do |id, quantity| %>
@@ -33,7 +33,7 @@
 
 <tfoot>
   <tr>
-    <td colspan="4" id="cart_total">Total:</td>
+    <td colspan="4" id="cart_total">Итого:</td>
     <td>
       <b><%= number_to_currency(total, unit: 'грн.', format: '%n %u')%></b>
     </td>
