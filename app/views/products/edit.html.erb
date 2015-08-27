@@ -2,15 +2,15 @@
 
 <%= form_for @item, :html => { :multipart => true } do |f| %>
 
-	<p>Product name:<br/><%= f.text_field :name %></p>
-	<p>Product price:<br/><%= f.text_field :price %></p>
-	<p>Quantity:<br/><%= f.text_field :count %></p>
-  <p>Product category:<br/><%= f.select(:category_id, @category_array) %></p>
-  <p>Product producer:<br/><%= f.select(:producer_id, @producer_array) %></p>
-  <p>Product retailer:<br/><%= f.select(:retailer_id, @retailer_array) %></p>
+  <p>Наименование:<br/><%= f.text_field :name %></p>
+  <p>Цена:<br/><%= f.text_field :price %></p>
+  <p>Количество:<br/><%= f.text_field :count %></p>
+  <p>Категория:<br/><%= f.select(:category_id, @category_array) %></p>
+  <p>Производитель:<br/><%= f.select(:producer_id, @producer_array) %></p>
+  <p>Магазин:<br/><%= f.select(:retailer_id, @retailer_array) %></p>
 
   <p><%= f.file_field :image %></p>
 
-	<p><%= f.submit "Update product" %></p>
+	<p><%= f.submit "Сохранить изменения" %></p>
 
 <% end %>

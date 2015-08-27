@@ -1,8 +1,7 @@
-#Cart controller
+# Cart controller
 class CartController < ApplicationController
   def index
     authorize! :index, :cart
-    # Binding.byebug
     if session[:cart]
       @cart = session[:cart]
     else
@@ -13,10 +12,7 @@ class CartController < ApplicationController
   def add
     authorize! :add, :cart
     id = params[:id]
-#    Binding.byebug
-    # unless session[:cart]
-      session[:cart] ||= {}
-    # end
+    session[:cart] ||= {}
     cart = session[:cart]
     if cart[id]
       cart[id] += 1
@@ -30,5 +26,15 @@ class CartController < ApplicationController
     authorize! :clear_cart, :cart
     session[:cart] = nil
     redirect_to action: :index
+  end
+
+  def self.get_products_count session
+    if session[:cart]
+      count = 0;
+      session[:cart].each_value{|val| count+=val};
+      count;
+    else
+      0
+    end
   end
 end
